@@ -2,7 +2,7 @@ from socket import *
 from os import path
 
 HOST = "127.0.0.1"  # Localhost
-PORT = 8080  # Development port
+PORT = 9999  # Development port
 # NOTE: On my machine, port 8080 does not work
 # OSError: [WinError 10013] An attempt was made to access a socket in a way
 #  forbidden by its access permissions
@@ -65,7 +65,5 @@ while True:
         connSocket.close()
     except IOError as e:
         print("An error has occurred!", e)
-        pass
-        # TODO: Handling errors
 
 serverSocket.close()
