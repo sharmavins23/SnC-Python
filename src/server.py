@@ -2,7 +2,12 @@ from socket import *
 from os import path
 
 HOST = "127.0.0.1"  # Localhost
-PORT = 9999  # Development port
+PORT = 8080  # Development port
+# NOTE: On my machine, port 8080 does not work
+# OSError: [WinError 10013] An attempt was made to access a socket in a way
+#  forbidden by its access permissions
+# This server has been tested to work properly on port 9999. It seems to be an
+#  issue with firewall setup, but the server works properly circumventing that
 
 # Create path for HTML file loading
 THIS_FOLDER = path.dirname(path.abspath(__file__))
