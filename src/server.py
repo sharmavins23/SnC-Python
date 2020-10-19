@@ -2,7 +2,7 @@ from socket import *
 from os import path
 
 HOST = "127.0.0.1"  # Localhost
-PORT = 9999  # Development port
+PORT = 8080  # Development port
 # NOTE: On my machine, port 8080 does not work
 # OSError: [WinError 10013] An attempt was made to access a socket in a way
 #  forbidden by its access permissions
@@ -30,7 +30,7 @@ while True:
         http_message = connSocket.recv(1024).decode("utf-8")
 
         # Parse the message and read the file
-        http_message_list = http_message.split(" ")  # Split across whitespace
+        http_message_list = http_message.split(" ")  # Split across newlines
         method = http_message_list[0]  # First string is method
         request_filepath = http_message_list[1]  # Next is requested file
         print(http_message)  # Log the connection request
